@@ -1,0 +1,1 @@
+Hello World with Hibernate and JPA Annotations

@@ -22,4 +22,4 @@ javac -Xlint:deprecation -Xlint:unchecked  -d $target -classpath $cp $(find cour
 
 cp=$cp":"$target
 
-java -cp $cp org.perso.cours_$1.main.Main
+java -cp $cp org.perso.tuto_hibernate.cours_$1.main.Main

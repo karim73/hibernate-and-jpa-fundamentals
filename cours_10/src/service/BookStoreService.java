@@ -1,4 +1,4 @@
-package org.perso.cours_10.service;
+package org.perso.tuto_hibernate.cours_10.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.perso.cours_10.domain.Book;
-import org.perso.cours_10.domain.Chapter;
-import org.perso.cours_10.domain.Publisher;
+import org.perso.tuto_hibernate.cours_10.domain.Book;
+import org.perso.tuto_hibernate.cours_10.domain.Chapter;
+import org.perso.tuto_hibernate.cours_10.domain.Publisher;
 
 public class BookStoreService {
 	

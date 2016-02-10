@@ -1,14 +1,14 @@
-package org.perso.cours_10.main;
+package org.perso.tuto_hibernate.cours_10.main;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.perso.cours_10.service.BookStoreService;
+import org.perso.tuto_hibernate.cours_10.service.BookStoreService;
 
 
-import org.perso.cours_10.domain.Book;
-import org.perso.cours_10.domain.Chapter;
-import org.perso.cours_10.domain.Publisher;
+import org.perso.tuto_hibernate.cours_10.domain.Book;
+import org.perso.tuto_hibernate.cours_10.domain.Chapter;
+import org.perso.tuto_hibernate.cours_10.domain.Publisher;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package org.perso.cours_10.domain;
+package org.perso.tuto_hibernate.cours_10.domain;
 
 public class Chapter {
 	private String title;
