@@ -13,29 +13,35 @@ import org.perso.cours_10.domain.Publisher;
 public class Main {
 
 	public static void main(String[] args) {
-		BookStoreService bookStoreService = new BookStoreService();
 
-		//persisting object graph
-		Publisher publisher = new Publisher("MANN", "Manning Publications Co.");
+		try{
+			BookStoreService bookStoreService = new BookStoreService();
 
-		Book book = new Book("9781617290459", "Java Persistence with Hibernate, Second Edition", publisher);
+			//persisting object graph
+			/*
+			Publisher publisher = new Publisher("MANN", "Manning Publications Co.");
 
-		List<Chapter> chapters = new ArrayList<Chapter>();
-		Chapter chapter1 = new Chapter("Introducing JPA and Hibernate", 1);
-		chapters.add(chapter1);
-		Chapter chapter2 = new Chapter("Domain Models and Metadata", 2);
-		chapters.add(chapter2);
+			Book book = new Book("9781617290459", "Java Persistence with Hibernate, Second Edition", publisher);
 
-		book.setChapters(chapters);
+			List<Chapter> chapters = new ArrayList<Chapter>();
+			Chapter chapter1 = new Chapter("Introducing JPA and Hibernate", 1);
+			chapters.add(chapter1);
+			Chapter chapter2 = new Chapter("Domain Models and Metadata", 2);
+			chapters.add(chapter2);
 
-		bookStoreService.persistObjectGraph(book);
+			book.setChapters(chapters);
 
-		//retrieving object graph
-		/*
-		Book book = bookStoreService.retrieveObjectGraph("9781617290459");
-		System.out.println(book);
-		*/
-
+			bookStoreService.persistObjectGraph(book);
+			*/
+			//retrieving object graph
+			
+			Book book = bookStoreService.retrieveObjectGraph("9781617290459");
+			System.out.println(book);
+			
+		}
+		catch(Exception e){
+			System.err.println("Dsl : "+e.getMessage());
+		}
 	}
 }
 

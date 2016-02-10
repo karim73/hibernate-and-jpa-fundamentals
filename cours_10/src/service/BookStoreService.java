@@ -13,13 +13,14 @@ import org.perso.cours_10.domain.Chapter;
 import org.perso.cours_10.domain.Publisher;
 
 public class BookStoreService {
+	
 	private Connection connection = null;
 	
-	public void persistObjectGraph(Book book) {
+	public void persistObjectGraph(Book book) throws Exception{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "percy123");
-			
+			System.out.println(connection.getClass());
 			PreparedStatement stmt = connection.prepareStatement("INSERT INTO PUBLISHER (CODE, PUBLISHER_NAME) VALUES (?, ?)");
 			stmt.setString(1, book.getPublisher().getCode());	
 			stmt.setString(2, book.getPublisher().getName());			
@@ -44,8 +45,27 @@ public class BookStoreService {
 			}
 					
 			stmt.close();			
-		} catch (ClassNotFoundException e) { e.printStackTrace(); } catch (SQLException e) { e.printStackTrace(); } 
-		finally { try { connection.close(); } catch (SQLException e) { e.printStackTrace(); } }
+		}
+		catch (ClassNotFoundException e) {			
+			// e.printStackTrace();
+			throw new Exception( "Class not fount Exception");
+		}
+		catch (SQLException e) {			
+			// e.printStackTrace();
+			throw new Exception( "SQL Exception");
+		} 
+		catch(Exception e){
+			throw new Exception( "Unkown Exception");	
+		}
+		finally {
+			try {				
+				connection.close();
+			}
+			catch (SQLException e) {
+				// e.printStackTrace(); 
+				throw new Exception( "SQL Can't find connexion to close");
+			}
+		}
 	}
 	
 	public Book retrieveObjectGraph(String isbn) {
