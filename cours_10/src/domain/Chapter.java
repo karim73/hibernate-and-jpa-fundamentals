@@ -1,4 +1,4 @@
-package domain;
+package org.perso.cours_10.domain;
 
 public class Chapter {
 	private String title;

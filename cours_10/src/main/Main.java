@@ -1,16 +1,17 @@
-package client;
+package org.perso.cours_10.main;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import service.BookStoreService;
+import org.perso.cours_10.service.BookStoreService;
 
 
-import domain.Book;
-import domain.Chapter;
-import domain.Publisher;
+import org.perso.cours_10.domain.Book;
+import org.perso.cours_10.domain.Chapter;
+import org.perso.cours_10.domain.Publisher;
 
-public class BookStoreClient {
+public class Main {
+
 	public static void main(String[] args) {
 		BookStoreService bookStoreService = new BookStoreService();
 

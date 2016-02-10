@@ -1,4 +1,4 @@
-package service;
+package org.perso.cours_10.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import domain.Book;
-import domain.Chapter;
-import domain.Publisher;
+import org.perso.cours_10.domain.Book;
+import org.perso.cours_10.domain.Chapter;
+import org.perso.cours_10.domain.Publisher;
 
 public class BookStoreService {
 	private Connection connection = null;
@@ -18,7 +18,7 @@ public class BookStoreService {
 	public void persistObjectGraph(Book book) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "password"); 
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "percy123");
 			
 			PreparedStatement stmt = connection.prepareStatement("INSERT INTO PUBLISHER (CODE, PUBLISHER_NAME) VALUES (?, ?)");
 			stmt.setString(1, book.getPublisher().getCode());	
@@ -52,7 +52,7 @@ public class BookStoreService {
 		Book book = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "password"); 
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "percy123");
 			
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM BOOK, PUBLISHER WHERE BOOK.PUBLISHER_CODE = PUBLISHER.CODE AND BOOK.ISBN = ?");
 			stmt.setString(1, isbn);
