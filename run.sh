@@ -1,14 +1,22 @@
 #!/usr/bin/env bash
 
+if [[ -z "$1" ]]; then
+	echo "Usage : ./run.sh arg1"
+	echo "arg1 : represents the course number."
+	exit -1
+fi
+
+if [ ! -d "cours_$1" ]; then
+	echo "Course $1 dosen't exist, plz try other course number."
+	exit -1
+fi
 
 target="target/classes/"
 
-# cp="."
-# for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
-#	do cp=$cp":$i";
-#	done;
-
-cp=".:libs/Hibernate_5.0.4.Final/mysql-connector-java-5.1.29-bin.jar"
+cp="."
+for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
+	do cp=$cp":$i";
+	done;
 
 javac -Xlint:deprecation -Xlint:unchecked  -d $target -classpath $cp $(find cours_$1/src -name *.java)
 
