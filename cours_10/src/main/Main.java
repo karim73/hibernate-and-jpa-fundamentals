@@ -34,10 +34,10 @@ public class Main {
 			bookStoreService.persistObjectGraph(book);
 			*/
 			//retrieving object graph
-			
+			/* */
 			Book book = bookStoreService.retrieveObjectGraph("9781617290459");
 			System.out.println(book);
-			
+			/* */
 		}
 		catch(Exception e){
 			System.err.println("Dsl : "+e.getMessage());

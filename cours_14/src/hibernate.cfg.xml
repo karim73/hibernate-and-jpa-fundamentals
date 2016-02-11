@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-
 <hibernate-configuration>
     <session-factory>
 
         <!-- Database connection settings -->
+
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/hello-world</property>
         <property name="connection.username">root</property>
@@ -23,7 +23,6 @@
         
         <!-- Use Annotation-based mapping metadata -->
         <mapping class="org.perso.tuto_hibernate.cours_14.entity.Message"/>
-        
     </session-factory>
 </hibernate-configuration>
 
