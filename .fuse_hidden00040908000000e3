@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" ]]; then
+	echo "Usage : ./run.sh arg1"
+	echo "arg1 : represents the course number."
+	exit -1
+fi
+
+if [ ! -d "cours_$1" ]; then
+	echo "Course $1 dosen't exist, plz try other course number."
+	exit -1
+fi
+
+target="target/classes/"
+
+cp="."
+for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
+# for i in `ls libs/Hibernate_4.3.5.Final/*.jar`;
+	do cp=$cp":$i";
+	done;
+echo $cp
+javac -Xlint:deprecation -Xlint:unchecked  -d $target -classpath $cp $(find cours_$1/src -name *.java)
+
+cp=$cp":"$target
+
+java -cp $cp org.perso.tuto_hibernate.cours_$1.main.Main

@@ -18,7 +18,7 @@ cp="."
 for i in `ls libs/Hibernate_4.3.5.Final/*.jar`;
 	do cp=$cp":$i";
 	done;
-echo $cp
+
 javac -Xlint:deprecation -Xlint:unchecked  -d $target -classpath $cp $(find cours_$1/src -name *.java)
 
 cp=$cp":"$target

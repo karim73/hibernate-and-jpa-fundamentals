@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="org.perso.tuto_hibernate.cours_14.domain">
-	<class name="Message" table="MESSAGE">
+	<class name="Message" table="message">
 		<id name="id" column="ID">
 			<generator class="native" />
 		</id>
