@@ -13,8 +13,9 @@ import javax.persistence.Table;
 public class Message{
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID")	
+	// @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private Long id;	
 
 	@Column(name="TEXT")	

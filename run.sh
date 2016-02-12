@@ -14,10 +14,11 @@ fi
 target="target/classes/"
 
 cp="."
-for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
+# for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
+for i in `ls libs/Hibernate_4.3.5.Final/*.jar`;
 	do cp=$cp":$i";
 	done;
-
+echo $cp
 javac -Xlint:deprecation -Xlint:unchecked  -d $target -classpath $cp $(find cours_$1/src -name *.java)
 
 cp=$cp":"$target
