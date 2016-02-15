@@ -3,8 +3,8 @@ package org.perso.tuto_hibernate.cours_14.main;
 import org.hibernate.Session;
 
 import org.perso.tuto_hibernate.cours_14.util.HibernateUtil;
-import org.perso.tuto_hibernate.cours_14.entity.Message;
-// import org.perso.tuto_hibernate.cours_14.domain.Message;
+// import org.perso.tuto_hibernate.cours_14.entity.Message;
+import org.perso.tuto_hibernate.cours_14.domain.Message;
 
 public class Main {
 	public static void main(String[] args) {
@@ -18,7 +18,8 @@ public class Main {
         
         		session.getTransaction().commit();
         		session.close();
-	
+
+				System.out.println("Done !!");
 	}
 }
 

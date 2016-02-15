@@ -14,8 +14,8 @@ fi
 target="target/classes/"
 
 cp="."
-# for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
-for i in `ls libs/Hibernate_4.3.5.Final/*.jar`;
+for i in `ls libs/Hibernate_5.0.4.Final/*.jar`;
+# for i in `ls libs/Hibernate_4.3.5.Final/*.jar`;
 	do cp=$cp":$i";
 	done;
 
